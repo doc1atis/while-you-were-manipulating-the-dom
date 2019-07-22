@@ -24,7 +24,7 @@ const luckyNumbersButton = document.querySelector(".lucky");
 luckyNumbersButton.onclick = luckify;
 
 // TODO: Find the lucky numbers button on our page.
-const titleCaseButton = document.querySelector(".lucky");
+const titleCaseButton = document.querySelector(".titlec");
 //When it's clicked, launch `titleify`.
 titleCaseButton.onclick = titleify;
 
@@ -48,6 +48,7 @@ function biggify(event) {
   /*
   TODO: Add 9000 to the user's number.
   
+  
   A hint: if this isn't working, it _might_ be because of the JavaScript type of the data coming in.
   
   Use the pre-defined `printValue` function below to print out the result,
@@ -56,7 +57,9 @@ function biggify(event) {
   Essentially, you can use `printValue` the same way you would `console.log`,
   only it will write to the DOM instead of to the console.
   */
-
+  const inputedNumber = Number(inputedText);
+  const newNumber = inputedNumber + 9000;
+  printValue(newNumber);
   /*
   Stretch goal TODO:
     Using the variable we saved above for the input box, clear its value.
@@ -74,18 +77,30 @@ function nasafy(event) {
   /*
     TODO: Call the function `clearList`, which we have defined for you.
   */
-
+  clearList();
   // TODO: Find the input box the user is typing in and put the DOM node in a variable.
-
+  const inputBox = document.querySelector(".user-input");
   // TODO: Use the variable you saved in the above step to dive deeper into the
   // object and find the value the user has added there. Save it to a variable.
-
+  const boxValue = inputBox.value;
+  const boxNumber = Number(boxValue);
   /*
     TODO: Print every value from the user's number down to (and including) the number 1. Then print "Blastoff!".
     
     Use the pre-defined `printValue` function below to print out each line,
     giving it the value you want to print.
   */
+
+  let newBoxNumber = boxNumber;
+  let counter = newBoxNumber;
+  while (counter >= 1) {
+    printValue(counter);
+
+    counter--;
+    if (counter === 0) {
+      printValue("Blastoff!");
+    }
+  }
 
   /*
     Stretch goal TODO:
@@ -100,21 +115,32 @@ function crazify(event) {
   /*
   TODO: Call the function `clearList`, which we have defined for you.
   */
-
+  clearList();
   // TODO: Find the input box the user is typing in and put the DOM node in a variable.
+  const inputBox = document.querySelector(".user-input");
 
   // TODO: Use the variable you saved in the above step to dive deeper into the
   // object and find the value the user has added there. Save it to a variable.
+  let inputBoxValue = inputBox.value;
 
   /*
     TODO: Loop through and capitalize every even-numbered character. That is, if the user's string is 7 characters long, the 2nd, 4th, and 6th characters should all be capitalized.
-    
     Hint: you'll probably have to "build" a new string as you loop.
-    
     Use the pre-defined `printValue` function below to print out result,
     giving it the value you want to print.
   */
+  let newstr = inputBoxValue;
+  const stringlength = inputBoxValue.length;
+  const lastIndex = stringlength - 1;
+  let counter = 0;
+  while (counter <= lastIndex) {
+    if (counter % 2 !== 0) {
+      newstr = newstr.replace(newstr[counter], newstr[counter].toUpperCase());
+    }
+    counter++;
+  }
 
+  printValue(newstr);
   /*
     Stretch goal TODOS:
     * If you haven't already, make sure capitalized user inputs get crazified too. "BANANA" crazified should be "bAnAnA", not "BANANA"!
@@ -135,12 +161,12 @@ function reverse(event) {
   /*
     TODO: Call the function `clearList`, which we have defined for you.
   */
-
+  clearList();
   // TODO: Find the input box the user is typing in and put the DOM node in a variable.
-
+  const inputBox = document.querySelector(".user-input");
   // TODO: Use the variable you saved in the above step to dive deeper into the
   // object and find the value the user has added there. Save it to a variable.
-
+  const inputBoxValue = inputBox.value;
   /*
     TODO: Print out the string, but in reverse. Do _not_ print out each character from the string individually; this would be pretty weird behavior when someone wants to see the reversed string of what they typed in!
     
@@ -153,7 +179,14 @@ function reverse(event) {
     * It would probably _not_ make sense to go through the user input string in regular, 0 to sring.length order.
       
   */
-
+  const letters = inputBoxValue.split("");
+  let mystr = "";
+  let counter = letters.length - 1;
+  while (counter >= 0) {
+    mystr = mystr + letters[counter];
+    counter--;
+  }
+  printValue(mystr);
   /*
     Stretch goal TODO:
     Using the variable we saved above for the input box, clear its value.
@@ -162,17 +195,19 @@ function reverse(event) {
 
 function luckify(event) {
   // Make sure the page isn't reloaded when the user submits the form.
+  console.log("button connected for luckify function");
   event.preventDefault();
-
   /*
   TODO: Call the function `clearList`, which we have defined for you.
 */
+  clearList();
 
   // TODO: Find the input box the user is typing in and put the DOM node in a variable.
-
+  const inputBox = document.querySelector(".user-input");
   // TODO: Use the variable you saved in the above step to dive deeper into the
   // object and find the value the user has added there. Make sure it's a
   // number, not a string. Save it to a variable.
+  const inputValue = Number(inputBox.value);
 
   /*
     TODO: Print out 5 "lucky numbers" (random integers) from 1 to the number they typed in.
@@ -180,7 +215,12 @@ function luckify(event) {
     Use the pre-defined `printValue` function below to print out each line,
     giving it the value you want to print.
   */
-
+  // from 0 to 9
+  let counter = 0;
+  while (counter < 5) {
+    printValue(Math.floor(Math.random() * (inputValue + 1)));
+    counter++;
+  }
   /*
     Stretch Goal TODOS:
 
@@ -198,16 +238,16 @@ function luckify(event) {
 function titleify(event) {
   // Make sure the page isn't reloaded when the user submits the form.
   event.preventDefault();
-
+  console.log("button connected for titleify function");
   /*
   TODO: Call the function `clearList`, which we have defined for you.
 */
-
+  clearList();
   // TODO: Find the input box the user is typing in and put the DOM node in a variable.
-
+  const inputBox = document.querySelector(".user-input");
   // TODO: Use the variable you saved in the above step to dive deeper into the
   // object and find the value the user has added there. Save it to a variable.
-
+  let inputValue = inputBox.value;
   /*
     TODO: Print out the title case version of the string the user inputted.
 
@@ -218,6 +258,20 @@ function titleify(event) {
 
     True title case keeps lower case for any word that's an article or preposition, but we're _definitely_ not asking that of you!
   */
+
+  let mystr = "";
+  let wordposition = 0;
+  const words = inputValue.split(" ");
+
+  while (wordposition < words.length) {
+    let newWord = words[wordposition].replace(
+      words[wordposition][0],
+      words[wordposition][0].toUpperCase()
+    );
+    mystr = mystr + " " + newWord;
+    wordposition++;
+  }
+  printValue(mystr);
 
   /*
     Stretch goal TODO:
