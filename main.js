@@ -14,7 +14,7 @@ const crazifyStringButton = document.querySelector(".crazy ");
 crazifyStringButton.onclick = crazify;
 
 // TODO: Find the reverse string button on our page.
-const reverseStringButton = document.querySelector("");
+const reverseStringButton = document.querySelector(".reverse");
 //When it's clicked, launch `reverse`.
 reverseStringButton.onclick = reverse;
 
