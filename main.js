@@ -41,10 +41,10 @@ function biggify(event) {
 
   // TODO: Find the input box the user is typing in and put the DOM node in a variable.
   // Make sure you're using the right selector!
-
+  const inputBox = document.querySelector(".user-input");
   // TODO: Use the variable you saved in the above step to dive deeper into the
   // object and find the value the user has added there. Save it to a variable.
-
+  const inputedText = inputBox.value;
   /*
   TODO: Add 9000 to the user's number.
   
