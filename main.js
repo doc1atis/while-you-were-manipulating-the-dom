@@ -9,7 +9,7 @@ const nasafyButton = document.querySelector("blastoff");
 nasafyButton.onclick = nasafy;
 
 // TODO: Find the crazify string button on our page.
-const crazifyStringButton = document.querySelector("");
+const crazifyStringButton = document.querySelector(".crazy ");
 //When it's clicked, launch `stringify`.
 crazifyStringButton.onclick = crazify;
 
