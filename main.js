@@ -4,7 +4,7 @@ const biggifyNumbersButton = document.querySelector(".big");
 biggifyNumbersButton.onclick = biggify;
 
 // TODO: Find the biggify numbers button on our page.
-const nasafyButton = document.querySelector("");
+const nasafyButton = document.querySelector("blastoff");
 //When it's clicked, launch `biggify`.
 nasafyButton.onclick = nasafy;
 
