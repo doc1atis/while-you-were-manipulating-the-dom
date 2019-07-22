@@ -4,12 +4,12 @@ const biggifyNumbersButton = document.querySelector(".big");
 biggifyNumbersButton.onclick = biggify;
 
 // TODO: Find the biggify numbers button on our page.
-const nasafyButton = document.querySelector("blastoff");
+const nasafyButton = document.querySelector(".blastoff");
 //When it's clicked, launch `biggify`.
 nasafyButton.onclick = nasafy;
 
 // TODO: Find the crazify string button on our page.
-const crazifyStringButton = document.querySelector(".crazy ");
+const crazifyStringButton = document.querySelector(".crazy");
 //When it's clicked, launch `stringify`.
 crazifyStringButton.onclick = crazify;
 
@@ -19,12 +19,12 @@ const reverseStringButton = document.querySelector(".reverse");
 reverseStringButton.onclick = reverse;
 
 // TODO: Find the lucky numbers button on our page.
-const luckyNumbersButton = document.querySelector("");
+const luckyNumbersButton = document.querySelector(".lucky");
 //When it's clicked, launch `luckify`.
 luckyNumbersButton.onclick = luckify;
 
 // TODO: Find the lucky numbers button on our page.
-const titleCaseButton = document.querySelector("");
+const titleCaseButton = document.querySelector(".lucky");
 //When it's clicked, launch `titleify`.
 titleCaseButton.onclick = titleify;
 
@@ -37,6 +37,7 @@ function biggify(event) {
   don't need to put anything in the parentheses to tell it what to clear, just
   call it--it knows what to do!
   */
+  clearList();
 
   // TODO: Find the input box the user is typing in and put the DOM node in a variable.
   // Make sure you're using the right selector!
